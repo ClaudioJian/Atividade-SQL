@@ -1,27 +1,35 @@
 # Atividade-SQL
 SIUMP - Sistema Inteligente de Monitoramento Urbano Participativo.
 
-Integrantes:
+# Integrantes:
 Claudio Jing Lin Jian
 Gabriel Raciunas de Menezes
 Felipe Frésca Gomes Costas
 Samuel Sabbadim Lacerda
 
-Contexto deste projeto:
+# Contexto deste projeto:
 Este projeto acadêmico tem como origem o SIMUP, um projeto real desenvolvido no âmbito do ACEX da FSA, por uma equipe composta majoritariamente pelos mesmos integrantes envolvidos nesta atividade. Embora tenha como base de projeto real do ACEX da FSA, os materiais apresentados não são idêntico ao original.
 
 Para atenter requisitos acadêmicos estabelicida por professor, os resultados são ajustado de acordo com requisitos definidas.
 
 O desenvolvimento da atividade segue esguinte fluxo:
 
-1. Definição requisitos iniciais: elaboração de documento inicial, posteriomente amarzenado em assets/SIMUP_requisitos.pdf;
-2. Aprimoramento dos requisito com IA: A documento inicial foi aprimorado por meiop de prompts de IA estabelecido pelo professor, resultando versão final do documento, amarzenada em assets/SIMUP_requisitos.pdf. O prompt indicado:
-   # PAPEL E DIRETRIZ MESTRA DE ATUAÇÃO
+## 1. Definição requisitos iniciais: 
+
+elaboração de documento inicial, posteriomente amarzenado em assets/SIMUP_requisitos.pdf;
+
+## 2. Aprimoramento dos requisito com IA:
+
+A documento inicial foi aprimorado por meio de prompts de IA estabelecido pelo professor, resultando versão final do documento, amarzenada em assets/SIMUP_requisitos.pdf. O prompt indicado:
+
+
+--
+   PAPEL E DIRETRIZ MESTRA DE ATUAÇÃO
 Você é um Engenheiro de Requisitos Sênior, Arquiteto de Segurança da Informação e Administrador de Dados (DBA) especialista em Modelagem Relacional e Formas Normais (1FN, 2FN, 3FN e BCNF).
 
 Sua tarefa é realizar uma **Auditoria Técnica Rigorosa, Correção e Aprimoramento** do documento em anexo intitulado **"ESPECIFICAÇÃO DE REQUISITOS E REGRAS DE NEGÓCIO"**.
 
-## REGRAS DE FORMATAÇÃO E TOM DA RESPOSTA
+ REGRAS DE FORMATAÇÃO E TOM DA RESPOSTA
 1. **Padronização Estrita:** Sua resposta deve seguir exatamente a estrutura de seções e subseções definida neste comando.
 2. **Objetividade e Ausência de Ambiguidade:** Utilize linguagem técnica, direta, imperativa e afirmativa. Proíba termos vagos ou subjetivos.
 3. **Formato de Cada Ajuste:** Cada ajuste sugerido deve ser numerado e seguir obrigatoriamente o padrão:
@@ -32,9 +40,9 @@ Sua tarefa é realizar uma **Auditoria Técnica Rigorosa, Correção e Aprimoram
 
 ---
 
-# ROTEIRO OBRIGATÓRIO DE AUDITORIA E GERAÇÃO DE SAÍDA
+ROTEIRO OBRIGATÓRIO DE AUDITORIA E GERAÇÃO DE SAÍDA
 
-## ETAPA 0 -- AUDITORIA DE HIGIENIZAÇÃO, PLACEHOLDERS E DADOS FICTÍCIOS
+ETAPA 0 -- AUDITORIA DE HIGIENIZAÇÃO, PLACEHOLDERS E DADOS FICTÍCIOS
 Verifique minuciosamente todo o documento (capa, cabeçalhos, tabelas, histórico de revisões e assinaturas) e liste todos os itens que o autor esqueceu de remover ou preencher:
 - Textos entre colchetes `[ ]` não substituídos.
 - Páginas de instruções do template (ex.: *"COMO UTILIZAR ESTE MODELO"*) e caixas de texto iniciadas por *"Orientação:"* ou textos em cinza.
@@ -44,9 +52,8 @@ Verifique minuciosamente todo o documento (capa, cabeçalhos, tabelas, históric
 
 ---
 
-## ETAPA 1 -- ANÁLISE ESTRUTURAL POR SEÇÃO (MÍNIMO DE 5 AJUSTES POR SUBSEÇÃO)
-
-### 1.1. Objetivo do Documento
+ETAPA 1 -- ANÁLISE ESTRUTURAL POR SEÇÃO (MÍNIMO DE 5 AJUSTES POR SUBSEÇÃO)
+ 1.1. Objetivo do Documento
 Avalie se o objetivo está claro, direto e se descreve corretamente o cliente real. Gere no mínimo 5 ajustes (`[AJUSTE-1.1.1]` a `[AJUSTE-1.1.5]+`) cobrindo:
 1. Identificação nominal do cliente, segmento de mercado e porte operacional.
 2. Descrição explícita do problema real de negócio que o banco de dados resolverá.
@@ -54,7 +61,7 @@ Avalie se o objetivo está claro, direto e se descreve corretamente o cliente re
 4. Alinhamento técnico com os artefatos de saída (DER Conceitual, Modelo Lógico em 3FN e Script Físico DDL).
 5. Eliminação de frases genéricas de template.
 
-### 1.2. Escopo do Sistema
+ 1.2. Escopo do Sistema
 Avalie se o escopo positivo e o escopo negativo (fora do escopo) estão claros, coerentes, razoáveis e bem documentados para o funcionamento do banco de dados. Gere no mínimo 5 ajustes (`[AJUSTE-1.2.1]` a `[AJUSTE-1.2.5]+`) cobrindo:
 1. Módulos que possuem tabelas na seção 6.1 ou políticas na seção 5, mas que foram omitidos na descrição do escopo.
 2. Contradições entre o "Fora do Escopo" e as Políticas Legais/Regras de Negócio (ex.: excluir e-commerce no escopo, mas exigir regra de compras não presenciais do CDC na seção 5).
@@ -62,7 +69,7 @@ Avalie se o escopo positivo e o escopo negativo (fora do escopo) estão claros, 
 4. Viabilidade de funcionamento autônomo do banco de dados com o escopo definido.
 5. Clareza e paralelismo na documentação do que o sistema **não** deve fazer para evitar estouro de escopo (*scope creep*).
 
-### 2.1. Quadro-Resumo dos Requisitos Funcionais
+2.1. Quadro-Resumo dos Requisitos Funcionais
 Avalie a completude, precisão e alinhamento 1:1 com a seção 2.2 e seção 6.1. Gere no mínimo 5 ajustes (`[AJUSTE-2.1.1]` a `[AJUSTE-2.1.5]+`) cobrindo:
 1. Verificação da correspondência biunívoca (1:1): todo item no quadro 2.1 deve possuir ficha detalhada no 2.2 e vice-versa.
 2. Cumprimento do volume mínimo de Requisitos Funcionais exigido para sustentar todas as entidades do banco de dados.
@@ -70,7 +77,7 @@ Avalie a completude, precisão e alinhamento 1:1 com a seção 2.2 e seção 6.1
 4. Coerência dos "Atores Principais" e "Prioridades" atribuídos a cada requisito.
 5. Padronização exata dos títulos e IDs dos requisitos entre o Quadro 2.1, o Detalhamento 2.2 e a Matriz 7.
 
-### 2.2. Detalhamento dos Requisitos Funcionais e Conformidade com as Formas Normais
+2.2. Detalhamento dos Requisitos Funcionais e Conformidade com as Formas Normais
 Analise cada ficha de requisito quanto às boas práticas de engenharia de software, completude das entradas, critérios de aceitação e respeito às Formas Normais (1FN, 2FN, 3FN). Gere no mínimo 5 ajustes (`[AJUSTE-2.2.1]` a `[AJUSTE-2.2.5]+`) cobrindo:
 1. **Auditoria de Entradas vs. Atributos (Seção 6.1):** Identifique campos listados em "Entradas principais" (ex.: e-mail, desconto) que foram esquecidos nas tabelas da seção 6.1, ou atributos da seção 6.1 que não possuem entrada prevista nos requisitos.
 2. **Auditoria de Entidades Fantasmas:** Identifique entidades citadas no campo "Entidades de dados" do requisito (ex.: `historico_preco`), mas que não existem na seção 6.1.
@@ -78,7 +85,7 @@ Analise cada ficha de requisito quanto às boas práticas de engenharia de softw
 4. **Verificação da 2ª e 3ª Formas Normais (2FN e 3FN):** Identifique dependências parciais e transitivas nos dados manipulados pelo requisito.
 5. **Consistência das Regras Associadas e Critérios de Aceitação:** Sincronize as RNs/PRs citadas na ficha com a Matriz de Rastreabilidade (Seção 7) e reescreva critérios de aceitação para que sejam binários (passou/falhou) e cubram fluxos de erro e rollback.
 
-### 3. Definição dos Requisitos Não Funcionais (RNF)
+3. Definição dos Requisitos Não Funcionais (RNF)
 Avalie se os RNFs são coerentes com o escopo do projeto e se são 100% mensuráveis/testáveis por QA. Gere no mínimo 5 ajustes (`[AJUSTE-3.1]` a `[AJUSTE-3.5]+`) cobrindo:
 1. Definição exata e sem colchetes do SGBD, versão, *storage engine* (ex.: InnoDB) e codificação/collation.
 2. Completude técnica do requisito de Auditoria (garantindo registro de chave primária afetada, operação, usuário, timestamp, valor anterior e valor novo).
@@ -86,7 +93,7 @@ Avalie se os RNFs são coerentes com o escopo do projeto e se são 100% mensurá
 4. Inclusão de RNFs ausentes essenciais para banco de dados: Controle de Concorrência/Isolamento Transacional (prevenção de *race conditions* em estoque) e Segurança/Criptografia.
 5. Viabilidade técnica das métricas de Backup e Recuperação (RPO e RTO) para o porte do cliente.
 
-### 4. Especificação das Regras de Negócio (RN)
+4. Especificação das Regras de Negócio (RN)
 Analise o detalhamento das regras de negócio, sua aderência às boas práticas de mercado, coerência com os RFs/RNFs e a viabilidade técnica da coluna "Implementação Prevista no Banco de Dados". Gere no mínimo 5 ajustes (`[AJUSTE-4.1]` a `[AJUSTE-4.5]+`) cobrindo:
 1. Viabilidade lógica das *Triggers* propostas (ex.: evitar deadlock ou impedimento de inserção do cabeçalho do pedido antes dos itens, definindo máquina de estados: `ABERTO` -> `FINALIZADO` -> `CANCELADO`).
 2. Completude das regras de estoque (contemplando não apenas a trava de saldo no `INSERT`, mas a baixa efetiva e a recomposição automática do saldo em caso de cancelamento ou estorno).
@@ -94,7 +101,7 @@ Analise o detalhamento das regras de negócio, sua aderência às boas práticas
 4. Inclusão de regras de negócio omitidas no texto, mas citadas implicitamente nos RFs (ex.: proibição de venda para clientes inativos, proibição de inclusão de produtos inativos, imutabilidade de pedidos já finalizados/cancelados).
 5. Precisão técnica dos mecanismos de banco de dados indicados (`CHECK`, `FOREIGN KEY`, `UNIQUE`, `TRIGGER`, `STORED PROCEDURE`, `VIEW`).
 
-### 5. Mapeamento de Políticas e Restrições (PR)
+5. Mapeamento de Políticas e Restrições (PR)
 Avalie a exatidão jurídica/regulatória das obrigações legais e verifique se os impactos descritos foram realmente implementados nos requisitos e nas entidades do banco de dados. Gere no mínimo 5 ajustes (`[AJUSTE-5.1]` a `[AJUSTE-5.5]+`) cobrindo:
 1. Precisão das fontes legais citadas (ex.: citação correta dos artigos do Código Tributário Nacional para retenção de 5 anos, CDC art. 49, LGPD Lei nº 13.709/2018 e Marco Civil da Internet Lei nº 12.965/2014).
 2. Auditoria de Impacto no Modelo: verifique se tabelas e colunas exigidas no texto da seção 5 (ex.: tabela de `estorno`, coluna `data_cancelamento`, registro de consentimento LGPD) foram realmente criadas na seção 6.1.
@@ -102,9 +109,9 @@ Avalie a exatidão jurídica/regulatória das obrigações legais e verifique se
 4. Necessidade de novos Requisitos Funcionais e novas Entidades derivados diretamente das obrigações legais.
 5. Adequação das restrições legais às especificidades do segmento de negócio do cliente.
 
-### 6. Entidades de Dados e Restrições de Integridade
+6. Entidades de Dados e Restrições de Integridade
 
-#### 6.1. Entidades Preliminares Identificadas e Normalização (1FN, 2FN, 3FN)
+6.1. Entidades Preliminares Identificadas e Normalização (1FN, 2FN, 3FN)
 Cruze todas as seções anteriores (RFs, RNFs, RNs e PRs) com a tabela de entidades preliminares. Gere no mínimo 5 ajustes (`[AJUSTE-6.1.1]` a `[AJUSTE-6.1.5]+`) cobrindo:
 1. **Entidades a Acrescentar ou Remover:** Liste todas as entidades que precisam ser adicionadas para atender aos RFs e PRs (ex.: `historico_preco`, `estorno`, `forma_pagamento`) ou removidas por estarem fora do escopo.
 2. **Atributos Faltantes por Entidade:** Liste todos os atributos omitidos em cada tabela existente (ex.: `email` e `data_consentimento` em `cliente`; `valor_desconto`, `data_cancelamento` e `id_endereco_entrega` em `pedido`; `bairro` e `complemento` em `endereco`; `id_registro_afetado` e `valor_novo` em `log_auditoria`; `ativo` em `categoria`).
@@ -112,7 +119,7 @@ Cruze todas as seções anteriores (RFs, RNFs, RNs e PRs) com a tabela de entida
 4. **Auditoria de 2ª Forma Normal (2FN):** Verifique entidades associativas (como `item_pedido`) quanto à dependência total da chave primária/candidata composta `(id_pedido, id_produto)`.
 5. **Auditoria de 3ª Forma Normal (3FN):** Identifique e corrija dependências transitivas (ex.: `cep -> cidade -> uf` em `endereco`; `forma_pagamento` textual em `pedido`; `valor_total` calculado em `pedido`).
 
-#### 6.2. Restrições de Integridade Derivadas das Regras
+6.2. Restrições de Integridade Derivadas das Regras
 Avalie a tabela de restrições de integridade e gere no mínimo 5 ajustes (`[AJUSTE-6.2.1]` a `[AJUSTE-6.2.5]+`) cobrindo:
 1. **Integridade de Entidade e Unicidade:** Inclusão de chaves únicas compostas em tabelas associativas (ex.: `UNIQUE(id_pedido, id_produto)` em `item_pedido`) e padronização dos nomes de PKs conforme seção 1.3.
 2. **Integridade Referencial Completa:** Mapeamento explícito das políticas `ON DELETE RESTRICT` e `ON UPDATE CASCADE` para 100% das chaves estrangeiras do modelo.
@@ -122,12 +129,12 @@ Avalie a tabela de restrições de integridade e gere no mínimo 5 ajustes (`[AJ
 
 ---
 
-## ETAPA 2 -- RECONSTRUÇÃO DA SEÇÃO 7 (MATRIZ DE RASTREABILIDADE CRUZADA)
+ETAPA 2 -- RECONSTRUÇÃO DA SEÇÃO 7 (MATRIZ DE RASTREABILIDADE CRUZADA)
 Apresente a tabela completa e corrigida da **7. MATRIZ DE RASTREABILIDADE CRUZADA** em formato Markdown, contemplando todos os Requisitos Funcionais (existentes e novos), Regras de Negócio, Políticas/Restrições, Requisitos Não Funcionais e Entidades de Dados, garantindo 100% de consistência bidirecional (nenhum item órfão ou inexistente).
 
 ---
 
-## ETAPA 3 -- REVISÃO DE COERÊNCIA, COESÃO E ORTOGRAFIA (10 AJUSTES)
+ETAPA 3 -- REVISÃO DE COERÊNCIA, COESÃO E ORTOGRAFIA (10 AJUSTES)
 Liste exatamente **10 ajustes numerados (`[ORTO-01]` a `[ORTO-10]`)** corrigindo:
 - Divergências de nomes e títulos de requisitos entre diferentes seções do documento.
 - Contradições entre listas de regras associadas nas fichas (Seção 2.2) e na Matriz (Seção 7).
@@ -136,7 +143,7 @@ Liste exatamente **10 ajustes numerados (`[ORTO-01]` a `[ORTO-10]`)** corrigindo
 
 ---
 
-## ETAPA 4 -- MITIGAÇÃO DE RISCOS, TESTABILIDADE (QA) E SEGURANÇA DA INFORMAÇÃO (10 AJUSTES)
+ETAPA 4 -- MITIGAÇÃO DE RISCOS, TESTABILIDADE (QA) E SEGURANÇA DA INFORMAÇÃO (10 AJUSTES)
 Forneça exatamente **10 ajustes pontuais e obrigatórios (`[SEG-01]` a `[SEG-10]`)** aplicando rigorosamente as seguintes diretrizes de Engenharia de Software Segura:
 1. **Clareza e Ausência de Ambiguidade:** Substituição de qualquer termo subjetivo, condicional vago (*"se possível"*, *"se houver"*, *"rápido"*, *"condição normal"*) por regras determinísticas de interpretação única.
 2. **Cobertura de Cenários de Exceção e Escopo Negativo:** Documentação explícita dos fluxos de falha, interrupção de transação, concorrência e limites do não-escopo.
@@ -150,13 +157,13 @@ Forneça exatamente **10 ajustes pontuais e obrigatórios (`[SEG-01]` a `[SEG-10
 
 Prompt de Criação do Diagrama de Entidade e Relacionamento
 
-# ROLE E CONTEXTO
+ROLE E CONTEXTO
 Você é um Arquiteto de Dados Sênior, Administrador de Banco de Dados (DBA) especialista em **MySQL** e Engenheiro de Requisitos. 
 Sua missão é analisar rigorosamente o **Documento de Especificação de Requisitos e Regras de Negócio** fornecido em anexo (ou no texto abaixo) e gerar um **Diagrama Entidade-Relacionamento (DER)** funcional, completo e livre de erros em sintaxe **Mermaid (`erDiagram`)**, além de um **Relatório Consolidado de Auditoria e Ajustes**.
 
 ---
 
-# 1. DIRETRIZES DE ANÁLISE DO DOCUMENTO DE ENTRADA
+1. DIRETRIZES DE ANÁLISE DO DOCUMENTO DE ENTRADA
 Você deve ler e cruzar todas as seções do documento, com foco absoluto em:
 1. **Seção 1.3 (Convenções e Nomenclatura):** Respeite estritamente o padrão definido (ex.: `snake_case`, nomes de tabelas no singular em letras minúsculas, chaves primárias `id_<entidade>`, chaves estrangeiras mantendo o nome da PK referenciada, prefixos `data_` ou `dt_`, e colunas de exclusão lógica como `ativo`).
 2. **Seção 2 (Requisitos Funcionais - RF):** Verifique todas as entradas principais e entidades citadas nas fichas de detalhamento (ex.: se um RF citar `historico_preco`, `e-mail` ou `desconto`, verifique se eles constam na seção 6.1).
@@ -168,7 +175,7 @@ Você deve ler e cruzar todas as seções do documento, com foco absoluto em:
 
 ---
 
-# 2. BOAS PRÁTICAS DE MODELAGEM DER (CONCEITUAL E LÓGICA)
+2. BOAS PRÁTICAS DE MODELAGEM DER (CONCEITUAL E LÓGICA)
 Ao construir o modelo de dados para um banco MySQL funcional, aplique rigorosamente:
 
 1. **Classificação e Estrutura de Entidades:**
@@ -204,7 +211,7 @@ Ao construir o modelo de dados para um banco MySQL funcional, aplique rigorosame
 
 ---
 
-# 3. REGRAS DE FORMATAÇÃO E ESTRUTURA DO CÓDIGO MERMAID
+3. REGRAS DE FORMATAÇÃO E ESTRUTURA DO CÓDIGO MERMAID
 O código Mermaid gerado deve ser impecável, pronto para copiar e colar no *Mermaid Live Editor* sem qualquer erro de compilação:
 
 1. **Estruturação do Código:**
@@ -222,32 +229,40 @@ O código Mermaid gerado deve ser impecável, pronto para copiar e colar no *Mer
 
 ---
 
-# 4. FORMATO OBRIGATÓRIO DA SUA RESPOSTA
+4. FORMATO OBRIGATÓRIO DA SUA RESPOSTA
 Sua resposta deve ser dividida exatamente nas **3 seções abaixo**:
 
-### SEÇÃO 1: ⚠️ RELATÓRIO IMPORTANTE DE AUDITORIA E AJUSTES NO DOCUMENTO DE REQUISITOS
+SEÇÃO 1: ⚠️ RELATÓRIO IMPORTANTE DE AUDITORIA E AJUSTES NO DOCUMENTO DE REQUISITOS
 Analise se há qualquer inconsistência ou omissão entre os **Requisitos Funcionais (Seção 2)**, **Requisitos Não Funcionais (Seção 3)**, **Regras de Negócio (Seção 4)**, **Políticas e Restrições (Seção 5)** e a tabela **6.1. Entidades Preliminares Identificadas**.
 Liste de forma consolidada com o selo **🔴 [IMPORTANTE - ATUALIZAR NO DOCUMENTO DE REQUISITOS]** cada ajuste realizado no DER para que o banco de dados funcione perfeitamente na prática, tais como:
 - **Entidades Citadas no Texto mas Ausentes na Seção 6.1:** (Ex.: `historico_preco` citado no RF03; tabela de `estorno` exigida na PR02).
 - **Atributos Citados em RFs/RNs/PRs mas Ausentes na Seção 6.1:** (Ex.: `email` opcional no RF01; `desconto` citado no RF02 e RN05; `data_cancelamento` exigida na PR02; campos de consentimento/anonimização da PR03; `complemento` e `bairro` no endereço).
 - **Ajustes de Integridade e Cardinalidade:** Justificativa das cardinalidades mínimas e máximas adotadas e garantias de 3FN.
 
-### SEÇÃO 2: 📊 CÓDIGO DO DIAGRAMA ENTIDADE-RELACIONAMENTO (MERMAID)
+SEÇÃO 2: 📊 CÓDIGO DO DIAGRAMA ENTIDADE-RELACIONAMENTO (MERMAID)
 Forneça um bloco de código ` ```mermaid ` contendo o `erDiagram` completo, contemplando todas as entidades originais da seção 6.1 + os atributos e entidades complementares identificados na auditoria (devidamente sinalizados com comentários `%%`), seguindo 100% das regras de indentação, blocos lógicos, tipos MySQL e relacionamentos no rodapé.
 
-### SEÇÃO 3: 🗂️ RESUMO DE ÍNDICES E GATILHOS (TRIGGERS) COMPLEMENTARES
+SEÇÃO 3: 🗂️ RESUMO DE ÍNDICES E GATILHOS (TRIGGERS) COMPLEMENTARES
 Liste brevemente os índices (`INDEX`) e gatilhos (`TRIGGER` / `CHECK`) exigidos pelas seções 4, 6.2 e 6.3 que não têm representação gráfica nativa em um DER conceitual/lógico, mas que implementam as regras de negócio no MySQL.
 
 ---
 
-# DOCUMENTO DE ESPECIFICAÇÃO PARA ANÁLISE:
+DOCUMENTO DE ESPECIFICAÇÃO PARA ANÁLISE:
 [CONTEÚDO DO DOCUMENTO DO ARQUIVO ANEXO]
 
 
 Copiar e colar o código no Mermind:  https://mermaid.ai/app/dashboard
 
-3. Elaboração de prompts para geração de modelos: baseado nos requisitos elaborado anteriomente para orientar geração de diagrama do banco de dados utilizando mermaid IA, com seguinte prompts:
-# Contexto e Papel
+
+------
+
+
+## 3. Elaboração de prompts para geração de modelos: 
+
+baseado nos requisitos elaborado anteriomente para orientar geração de diagrama do banco de dados utilizando mermaid IA, com seguinte prompts:
+
+--
+Contexto e Papel
 Atue como um Arquiteto de Dados Senior (focado em Governança de Dados, DAMA-DMBOK e COBIT) e um Desenvolvedor Front-end Especialista Sênior. 
 Seu objetivo é analisar a modelagem de um banco de dados, apontar correções de coerência e gerar um Dicionário de Dados interativo, profissional e focado em governança, pronto para ser hospedado no GitHub Pages. Padrão profissional usando as boas práticas internacionais para governança de dados.
 
@@ -259,7 +274,7 @@ Seu objetivo é analisar a modelagem de um banco de dados, apontar correções d
 
 ---
 
-# ENTRADA DE DADOS E CUSTOMIZAÇÃO DO PROJETO
+ENTRADA DE DADOS E CUSTOMIZAÇÃO DO PROJETO
 **[ALUNO: Preencha as informações abaixo antes de enviar o prompt]**
 
 **1. Informações do Projeto:**
@@ -283,12 +298,12 @@ Documento em ANEXO: [ESCREVA AQUI O NOME DO ARQUIVO]
 
 ---
 
-# TAREFAS QUE A IA DEVE EXECUTAR
+TAREFAS QUE A IA DEVE EXECUTAR
 
-## PARTE 1: Lista de Customização e Metadados do Projeto
+PARTE 1: Lista de Customização e Metadados do Projeto
 Apresente um cabeçalho executivo confirmando os dados de entrada. Adicione um parágrafo sobre "Data Literacy" (Cultura de Dados) explicando o valor estratégico deste dicionário específico para a empresa descrita, baseando-se no DMBOK e COBIT.
 
-## PARTE 2: Análise de Coerência e Sugestões de Ajustes Manuais
+PARTE 2: Análise de Coerência e Sugestões de Ajustes Manuais
 Cruze as três fontes de dados (Requisitos, DER e DDL). 
 - Liste divergências de cardinalidade, tipos de dados, chaves estrangeiras órfãs ou regras de negócio descritas nos requisitos mas ausentes no DDL.
 - Fornecer a correção em formato de lista (Ex: "No documento de requisitos, na linha X, altere a palavra Y para Z para alinhar com a tabela W").
@@ -302,7 +317,7 @@ Verifique minuciosamente todos os documentos (Especificação de Requisitos e Re
 - Nomes fictícios ou padronizados do template no Histórico de Revisões.
 - O histórico de revisões deve ter no mínimo 3 itens, sendo o primeiro a criação inicial do documento, mais duas revisões, sendo esta realizada agora a 4º revisão.
 
-## PARTE 3: Geração do Código (HTML, CSS, JS) do Dicionário de Dados
+PARTE 3: Geração do Código (HTML, CSS, JS) do Dicionário de Dados
 Gere o código completo. Crie blocos de código distintos e completos para `index.html`, `style.css` e `script.js`. 
 
 **Diretrizes de Layout (UI/UX) obrigatórias:**
@@ -349,7 +364,7 @@ As colunas da tabela HTML DEVEM ser:
 
 *(LEMBRETE PARA A IA: Não abrevie o código, entregue as estruturas de TODAS as tabelas contidas no DDL).*
 
-## PARTE 4: Passo a Passo de Estrutura de Pastas e Arquivos
+PARTE 4: Passo a Passo de Estrutura de Pastas e Arquivos
 Escreva um tutorial técnico para o aluno informando:
 1. A estrutura exata de diretórios local:
    ```text
@@ -365,7 +380,7 @@ Escreva um tutorial técnico para o aluno informando:
 Explicação de como as tags <link> e <script> no HTML já estão preparadas para essa estrutura exata.
 Como o navegador bloqueia requisições fetch() em arquivos locais abertos via file:// (caso o aluno teste clicando duas vezes no index.html antes de subir no GitHub), não peça para o JS ler um arquivo .sql externo. Deixe o SQL embutido dentro da tag <pre><code class="language-sql">...</code></pre> no próprio index.html (o que também garante o cumprimento da regra de Zero Omissão) e mantenha a estrutura de pastas exatamente como você já desenhou.
 
-## PARTE 5: Tutorial de Deploy no GitHub Pages
+PARTE 5: Tutorial de Deploy no GitHub Pages
 
 Crie um passo a passo para deploy:
 
@@ -374,21 +389,52 @@ Crie um passo a passo para deploy:
 O caminho exato: Settings > Pages > Build and deployment > Source: GitHub Actions > Select "Static HTML" > Configure > Commit changes.
 
 Um aviso importante sobre Case Sensitivity (maiusculas e minúsculas) nos caminhos dos arquivos no servidor do GitHub Pages.
+-----
+## 4. Geração de modelo com mermaid IA: 
 
-4. Geração de modelo com mermaid IA: utilizando prompts anterior para gerar a diagrama. Os resultados está em assets/SIMUP_modelo_mermaid_preview.png e assets/SIMUP_modelo_mermaid.pdf
-5. Conversão do modelo para SQL: utilizando MySQL workbench para reproduzir o modelo obtido na etapa anterior e gerar script de sql, amarzenado em assets/atividade_sql_simup.sql
-6. Geração de catálogo: Usando os mesmo prompts da etapa 3 como base para criar catálogo de database.
+utilizando prompts anterior para gerar a diagrama. Os resultados está em assets/SIMUP_modelo_mermaid_preview.png e assets/SIMUP_modelo_mermaid.pdf
+
+## 5. Conversão do modelo para SQL: 
+
+utilizando MySQL workbench para reproduzir o modelo obtido na etapa anterior e gerar script de sql, amarzenado em assets/atividade_sql_simup.sql
+
+## 6. Geração de catálogo: 
+
+Usando os mesmo prompts da etapa 3 como base para criar catálogo de database.
 
 
-IMPORTANTE:
+# IMPORTANTE:
 
 Todas as estruturas, modelos e os script deste projeto foram gerado por meio de prompts de IA indicado por professor. Portanto, o projeto só serve como base para desenvolvimento e não solução final, e é importante de considerar as seguintes limitações e ressalvas:
 
-1. Ausência de modularidade e organização do código: O código gerado não segue necessariamente boas práticas de organização, moduralidade ou outras práicas. Consequentemente, sua estrutura está desordenada e dificultará coompreensão e manuntenção.
-2. Ausência de definição prévia da arquitetura do sitema: O modelo de banco de dadofoi elaborado sem uma definição prévia da arquitetura, por exemplo, Event store é utilizado porém não foi documentado. Como diferentes arquiteturas podem exigir diferentes dados, podem existir incosistência ou limitações que precisarão ser revisado durante implementação definitivadamente.
-3. Ausência de análise e design de seguraça, desempenho, impacto e riscos. Além disso, alguns estrutura podem não ser mais adequada para determinados cenários. Por exemplo, a tabela localizacao poderia utilizar recursos de indexação espacial, como R-tree ou estrutura geoespaciais disponíveis no PostgreSQL, para otimização de consulta.
-4. Desenvolvimento em grupo e envio individual: O trabalho foi desenvolvido em equipe. Entretanto, deviado a restrição estabelecido por professor, cada integrante deverá realizar o envio individualmente em seu respectivo repositório de GitHub.
-5. Responsabilidade e profissão fictional no documento: As profissões e responsabilidade atribuída aos integrantes do grupo são fictícias e foram definidas para atenter requistios acadêmico do projeto.
-6. Ausência de documento dos códigos(nesse caso, catálogo): Não há documento específica para qualquer código. Isso pode dificultar a manuntenção e compreensão de futuras implementação.
-7. Ausência de manutenção futura: Este repositório possui finalidade exclusivamente acadêmica e não está previsto para receber manutenção ou atualizações futuras.
-8. Não existe documento detalhada sobre como as tabelas será utlizado nas implementação final. Porém, só consiste o que a coluna e tabela faz e não como utilizado.
+## 1. Ausência de modularidade e organização do código: 
+
+O código gerado não segue necessariamente boas práticas de organização, moduralidade ou outras práicas. Consequentemente, sua estrutura está desordenada e dificultará coompreensão e manuntenção.
+
+## 2. Ausência de definição prévia da arquitetura do sitema: 
+
+O modelo de banco de dadofoi elaborado sem uma definição prévia da arquitetura, por exemplo, Event store é utilizado porém não foi documentado. Como diferentes arquiteturas podem exigir diferentes dados, podem existir incosistência ou limitações que precisarão ser revisado durante implementação definitivadamente.
+
+## 3. Ausência de análise e design de seguraça, desempenho, impacto e riscos: 
+
+Além disso, alguns estrutura podem não ser mais adequada para determinados cenários. Por exemplo, a tabela localizacao poderia utilizar recursos de indexação espacial, como R-tree ou estrutura geoespaciais disponíveis no PostgreSQL, para otimização de consulta.
+
+## 4. Desenvolvimento em grupo e envio individual:
+
+O trabalho foi desenvolvido em equipe. Entretanto, deviado a restrição estabelecido por professor, cada integrante deverá realizar o envio individualmente em seu respectivo repositório de GitHub.
+
+## 5. Responsabilidade e profissão fictional no documento: 
+
+As profissões e responsabilidade atribuída aos integrantes do grupo são fictícias e foram definidas para atenter requistios acadêmico do projeto.
+
+## 6. Ausência de documento dos códigos(nesse caso, catálogo): 
+
+Não há documento específica para qualquer código. Isso pode dificultar a manuntenção e compreensão de futuras implementação.
+
+## 7. Ausência de manutenção futura: 
+
+Este repositório possui finalidade exclusivamente acadêmica e não está previsto para receber manutenção ou atualizações futuras.
+
+## 8. Documento detalhadas entre backend e database:
+
+Não existe documento detalhada sobre como as tabelas será utlizado nas implementação final. Porém, só consiste o que a coluna e tabela faz e não como utilizado.
