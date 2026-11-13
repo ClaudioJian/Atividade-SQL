@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dicionário de dados, documentação técnica e governança do SIMUP.">
+  <meta name="theme-color" content="#101b35">
+  <title>SIMUP · Dicionário de Dados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="SIMUP início"><span class="brand-mark">S</span><span><strong>SIMUP</strong><small>DATA CATALOG</small></span></a>
+      <div class="side-label">DOCUMENTAÇÃO</div>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio" data-section="inicio"><span>⌂</span> Visão geral</a>
+        <a class="nav-link" href="#dicionario" data-section="dicionario"><span>▤</span> Dicionário de dados <b>07</b></a>
+        <a class="nav-link" href="#relacionamentos" data-section="relacionamentos"><span>⌘</span> Relacionamentos</a>
+        <a class="nav-link" href="#governanca" data-section="governanca"><span>◈</span> Governança</a>
+        <a class="nav-link" href="#auditoria" data-section="auditoria"><span>◎</span> Auditoria documental</a>
+      </nav>
+      <div class="side-label side-label-bottom">ARTEFATOS</div>
+      <button class="nav-link nav-button" data-open="der"><span>▧</span> Modelo DER <span class="external">↗</span></button>
+      <button class="nav-link nav-button" data-open="sql"><span>⌘</span> Script SQL <span class="external">↗</span></button>
+      <button class="nav-link nav-button" data-open="requisitos"><span>▧</span> Requisitos <span class="external">↗</span></button>
+      <div class="sidebar-bottom"><span class="status-dot"></span><span>Documentação local</span><small>v1.0 · 12 nov 2026</small></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button><div class="breadcrumb">SIMUP <span>/</span> <strong id="breadcrumbCurrent">Visão geral</strong></div><div class="top-actions"><span class="env-tag">MYSQL · INNODB</span><button class="icon-button" id="themeToggle" title="Alternar tema" aria-label="Alternar tema">◐</button></div></header>
+      <section class="hero" id="inicio">
+        <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> DOCUMENTAÇÃO TÉCNICA · PROJETO ACADÊMICO</div><h1>Dados urbanos.<br><em>Decisões melhores.</em></h1><p>Catálogo técnico e documentação de governança do Sistema Inteligente de Monitoramento Urbano Participativo.</p><div class="hero-buttons"><a class="primary-button" href="#dicionario">Explorar dicionário <span>→</span></a><button class="secondary-button" data-open="der">Visualizar modelo DER <span>↗</span></button></div></div>
+        <div class="hero-graphic" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="map-node node-a">⌖</div><div class="map-node node-b">⌖</div><div class="map-node node-c">⌖</div><div class="graphic-label">URBAN DATA<br><b>MONITORING</b></div><div class="graphic-coord">23°39' S<br>46°32' W</div></div>
+      </section>
+      <section class="stats-grid" aria-label="Resumo do banco de dados">
+        <article class="stat-card"><div class="stat-top"><span>ENTIDADES</span><span class="stat-icon">▤</span></div><strong>07</strong><small>Tabelas relacionais</small></article>
+        <article class="stat-card"><div class="stat-top"><span>RELACIONAMENTOS</span><span class="stat-icon">⌘</span></div><strong>08</strong><small>Chaves estrangeiras</small></article>
+        <article class="stat-card"><div class="stat-top"><span>ENGINE</span><span class="stat-icon">◈</span></div><strong>InnoDB</strong><small>Suporte transacional</small></article>
+        <article class="stat-card"><div class="stat-top"><span>CODIFICAÇÃO</span><span class="stat-icon">Aa</span></div><strong>UTF-8</strong><small>utf8mb4 · unicode_ci</small></article>
+      </section>
+      <section class="section-block" id="dicionario">
+        <div class="section-heading"><div><div class="eyebrow">ESTRUTURA DO BANCO</div><h2>Dicionário de dados</h2><p>Selecione uma entidade para consultar seus atributos, tipos e restrições.</p></div><span class="section-count">07 ENTIDADES</span></div>
+        <div class="catalog-layout"><div class="catalog-list"><div class="search-wrap"><span>⌕</span><input id="tableSearch" type="search" placeholder="Buscar tabela ou atributo..." aria-label="Buscar tabela ou atributo"></div><div id="tableList" class="table-list"></div></div><article class="detail-panel" id="tableDetail" aria-live="polite"><div class="empty-detail"><span class="empty-icon">▤</span><h3>Selecione uma tabela</h3><p>Os detalhes da entidade aparecerão aqui.</p></div></article></div>
+      </section>
+      <section class="section-block" id="relacionamentos"><div class="section-heading"><div><div class="eyebrow">ESTRUTURA LÓGICA</div><h2>Mapa de relacionamentos</h2><p>Relações identificadas diretamente pelas chaves estrangeiras do DDL.</p></div></div><div class="relations-grid" id="relationsGrid"></div><div class="note-line"><span>i</span> As cardinalidades representam a estrutura relacional. A existência de registros relacionados depende dos dados efetivamente cadastrados.</div></section>
+      <section class="section-block" id="governanca"><div class="section-heading"><div><div class="eyebrow">DAMA-DMBOK · COBIT · LGPD</div><h2>Governança e qualidade</h2><p>Leitura técnica do que está implementado e do que requer decisão ou controle complementar.</p></div></div><div class="governance-grid"><article class="governance-card"><span class="gov-icon">◈</span><h3>Integridade referencial</h3><p>O DDL define FKs e políticas de exclusão/atualização para preservar vínculos entre registros.</p><span class="tag tag-ok">IMPLEMENTADO NO DDL</span></article><article class="governance-card"><span class="gov-icon">⌁</span><h3>Qualidade geográfica</h3><p>Latitude e longitude são obrigatórias, mas o DDL não restringe seus intervalos geográficos.</p><span class="tag tag-warn">VALIDAÇÃO COMPLEMENTAR</span></article><article class="governance-card"><span class="gov-icon">◉</span><h3>Privacidade e LGPD</h3><p>Nome, e-mail, localização vinculável e conteúdo podem constituir dados pessoais. Hash de senha exige proteção reforçada.</p><span class="tag tag-info">CLASSIFICAÇÃO PROPOSTA</span></article><article class="governance-card"><span class="gov-icon">⌖</span><h3>Auditoria</h3><p>A tabela registra ação, entidade, registro, detalhes JSON e data do evento. Não equivale, sozinha, a uma política completa de auditoria.</p><span class="tag tag-ok">ESTRUTURA PRESENTE</span></article><article class="governance-card"><span class="gov-icon">▦</span><h3>Transações e armazenamento</h3><p>As sete tabelas utilizam InnoDB e utf8mb4 com collation utf8mb4_unicode_ci.</p><span class="tag tag-ok">IMPLEMENTADO NO DDL</span></article><article class="governance-card"><span class="gov-icon">⚑</span><h3>Controle de acesso</h3><p>Não há tabelas ou privilégios RBAC definidos neste script. Perfis e permissões devem ser tratados na camada apropriada.</p><span class="tag tag-warn">NÃO EVIDENCIADO</span></article></div>
+        <div class="privacy-panel"><div><div class="eyebrow">CLASSIFICAÇÃO DE INFORMAÇÃO</div><h3>Tratamento recomendado</h3><p>Classificação preliminar baseada nos campos existentes. A confirmação depende do contexto de uso, finalidade e possibilidade de associação a uma pessoa natural.</p></div><div class="privacy-list"><div><b>Identificação</b><span>nome, email · dado pessoal</span></div><div><b>Credencial</b><span>senha_hash · confidencial, acesso restrito</span></div><div><b>Geolocalização</b><span>latitude, longitude, endereco · pode ser dado pessoal quando vinculável</span></div><div><b>Conteúdo</b><span>descricao, conteudo, detalhes · revisar conteúdo enviado pelos usuários</span></div></div></div>
+      </section>
+      <section class="section-block" id="auditoria"><div class="section-heading"><div><div class="eyebrow">ANÁLISE DE CONSISTÊNCIA</div><h2>Auditoria documental</h2><p>Comparação entre especificação de requisitos, DER e script físico SQL.</p></div><span class="audit-status">COM RESSALVAS</span></div><div class="audit-intro"><strong>Resultado da análise</strong><p>O DER está, em linhas gerais, mais alinhado ao DDL do que a seção de entidades dos requisitos. Antes de declarar os artefatos plenamente consistentes, é necessário harmonizar nomes, tipos e atributos divergentes.</p></div><div class="audit-table-wrap"><table class="audit-table"><thead><tr><th>ENTIDADE</th><th>DIVERGÊNCIA IDENTIFICADA</th><th>RECOMENDAÇÃO</th></tr></thead><tbody>
+        <tr><td><b>usuario</b></td><td>Requisitos usam nome_publico (80, UNIQUE), situacao e criado_em/atualizado_em. DDL usa nome (150), status e data_cadastro; não há atualizado_em.</td><td>Definir o contrato oficial de atributos e atualizar requisitos, DER ou DDL de forma coordenada.</td></tr>
+        <tr><td><b>categoria_reclamacao</b></td><td>Requisitos indicam id INT e nome VARCHAR(60); DDL usa BIGINT UNSIGNED e VARCHAR(100).</td><td>Padronizar tipos e comprimentos nos três artefatos.</td></tr>
+        <tr><td><b>localizacao</b></td><td>Requisitos preveem referencia e criado_em; DDL usa endereco e não possui criado_em.</td><td>Definir se referencia e endereco representam o mesmo conceito e decidir sobre a data de criação.</td></tr>
+        <tr><td><b>reclamacao</b></td><td>Requisitos indicam titulo(120), situacao(20), criado_em e atualizado_em; DDL usa titulo(150), status(30), data_criacao e data_atualizacao.</td><td>Uniformizar nomenclatura, comprimentos e semântica temporal.</td></tr>
+        <tr><td><b>imagem_reclamacao</b></td><td>Requisitos usam caminho_armazenamento e criado_em; DDL usa caminho_arquivo e data_envio.</td><td>Confirmar equivalência semântica e padronizar nomes.</td></tr>
+        <tr><td><b>comentario</b></td><td>Requisitos usam descricao, criado_em e atualizado_em opcional; DDL usa conteudo e datas com atualização automática.</td><td>Harmonizar nomes e nulabilidade da data de atualização.</td></tr>
+        <tr><td><b>log_auditoria</b></td><td>Requisitos incluem operacao, resultado, valor_anterior, valor_novo e identificador_requisicao. DDL possui acao, detalhes JSON e outros tipos.</td><td>Revisar os requisitos de auditoria e definir o nível de rastreabilidade necessário.</td></tr>
+      </tbody></table></div>
+        <div class="audit-notes"><article><span class="tag tag-warn">PENDÊNCIA DE DOMÍNIO</span><h3>Restrições não evidenciadas no DDL</h3><ul><li>Intervalos válidos para latitude e longitude.</li><li>Valores permitidos para status de usuário e reclamação.</li><li>Bloqueio de reclamações associadas a categorias inativas.</li><li>Validação de strings vazias em título e descrição.</li></ul></article><article><span class="tag tag-info">DECISÃO A DOCUMENTAR</span><h3>Políticas referenciais</h3><ul><li>comentario.id_comentario_pai usa ON DELETE SET NULL.</li><li>log_auditoria.id_usuario usa ON DELETE SET NULL.</li><li>Demais FKs do DDL usam ON DELETE RESTRICT.</li><li>Essas escolhas devem ser justificadas pela política de retenção e auditoria.</li></ul></article></div>
+        <div class="audit-footnote">Nota metodológica: não foram inferidos registros órfãos, valores inválidos ou violações de dados, pois o ZIP contém o script de estrutura, não uma base populada. O histórico do documento apresenta oito registros sequenciais, de 0.1.0 a 1.0. A versão 1.0 está datada de 19/11/2026, posterior à data desta análise (12/11/2026), portanto deve ser entendida como data de entrega prevista.</div>
+      </section>
+      <footer class="footer"><div class="brand brand-footer"><span class="brand-mark">S</span><span><strong>SIMUP</strong><small>DATA CATALOG</small></span></div><p>Documentação técnica do banco de dados · Projeto acadêmico</p><span>MySQL · InnoDB · utf8mb4</span></footer>
+    </main>
+  </div>
+  <div class="modal" id="artifactModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><section class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><header class="modal-header"><div><span class="eyebrow">ARTEFATO DO PROJETO</span><h2 id="modalTitle">Modelo DER</h2></div><div class="modal-actions"><a id="openArtifact" class="secondary-button small-button" target="_blank" rel="noopener">Abrir em nova aba ↗</a><button class="icon-button" data-close aria-label="Fechar">✕</button></div></header><div class="modal-body" id="modalBody"></div></section></div>
+  <script src="script.js"></script>
+</body></html>
