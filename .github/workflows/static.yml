@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: SIMUP_Data_Catalog/${{ steps.deployment.outputs.page_url }}
+      url: ${SIMUP_Data_Catalog/{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
